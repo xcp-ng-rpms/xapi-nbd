@@ -1,6 +1,6 @@
 Name:           xapi-nbd
 Version:        1.3.0
-Release:        3%{?dist}
+Release:        11%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
