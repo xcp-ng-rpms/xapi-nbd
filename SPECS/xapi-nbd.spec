@@ -1,13 +1,17 @@
 Name:           xapi-nbd
-Version:        1.3.0
-Release:        11%{?dist}
+Version:        1.9.0
+Release:        1%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
-Source0:        https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v%{version}&format=tar.gz&prefix=xapi-nbd-%{version}#/xapi-nbd-%{version}.tar.gz
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.3.0&format=tar.gz&prefix=xapi-nbd-1.3.0#/xapi-nbd-1.3.0.tar.gz) = 906421f039f3e6c7b09e61b975a00cde5c5a79ad
-Source1:        xapi-nbd.service
-Source2:        xapi-nbd.path
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.9.0&format=tar.gz&prefix=xapi-nbd-1.9.0#/xapi-nbd-1.9.0.tar.gz
+Source1: SOURCES/xapi-nbd/xapi-nbd.service
+Source2: SOURCES/xapi-nbd/xapi-nbd.path
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.9.0&format=tar.gz&prefix=xapi-nbd-1.9.0#/xapi-nbd-1.9.0.tar.gz) = 0c6dc8f1193d8b611bc6cc042d6232c3310e648d
+
 BuildRequires:  xs-opam-repo
 BuildRequires:  ocaml-xcp-idl-devel
 BuildRequires:  ocaml-xen-api-client-devel
@@ -22,7 +26,7 @@ NBD server that exposes XenServer disks
 %autosetup -p1
 
 %build
-jbuilder build -p %{name}
+make release
 
 %install
 %{__install} -D -m 0755 _build/default/src/main.exe %{buildroot}/%{_sbindir}/xapi-nbd
@@ -48,6 +52,24 @@ jbuilder build -p %{name}
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Tue Jan 15 2019 Christian Lindig <christian.lindig@citrix.com> - 1.9.0-1
+- CA-307773: initialize EC curve to the one XAPI would use
+
+* Wed Jan 09 2019 Christian Lindig <christian.lindig@citrix.com> - 1.8.0-1
+- CA-303570 use same cipher suite as xapi
+
+* Wed Jan 02 2019 Christian Lindig <christian.lindig@citrix.com> - 1.7.0-1
+- CP-30062 Update dependencies for Lwt 4.1, OCaml 4.07
+
+* Tue Dec 04 2018 Christian Lindig <christian.lindig@citrix.com> - 1.6.0-1
+- Reference xapi-inventory as xcp-invenotry is being deprecated.
+
+* Tue Oct 09 2018 Christian Lindig <christian.lindig@citrix.com> - 1.5.0-1
+- CA-298461 use local session for cleanups
+
+* Tue Sep 18 2018 Christian Lindig <christian.lindig@citrix.com> - 1.4.0-1
+- Update Travis setup, move to Dune from Jbuilder
+
 * Wed Mar 28 2018 Christian Lindig <christian.lindig@citrix.com> - 1.3.0-1
 - Use Alcotest_lwt for Lwt-based unit tests
 
