@@ -1,5 +1,5 @@
 [Unit]
-Description=NBD server that exposes XenServer disks
+Description=NBD server that exposes XCP-ng disks
 After=xapi.service message-switch.service syslog.target
 Wants=xapi.service message-switch.service syslog.target
 

@@ -1,6 +1,6 @@
 Name:           xapi-nbd
 Version:        1.9.0
-Release:        1%{?dist}
+Release:        1.1%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
@@ -52,6 +52,9 @@ make release
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.9.0-1.1
+- Replace XenServer with XCP-ng in xapi-nbd.service
+
 * Tue Jan 15 2019 Christian Lindig <christian.lindig@citrix.com> - 1.9.0-1
 - CA-307773: initialize EC curve to the one XAPI would use
 
