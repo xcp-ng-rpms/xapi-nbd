@@ -1,16 +1,16 @@
 Name:           xapi-nbd
-Version:        1.9.0
-Release:        1%{?dist}
+Version:        1.10.0
+Release:        3%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.9.0&format=tar.gz&prefix=xapi-nbd-1.9.0#/xapi-nbd-1.9.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.10.0&format=tar.gz&prefix=xapi-nbd-1.10.0#/xapi-nbd-1.10.0.tar.gz
 Source1: SOURCES/xapi-nbd/xapi-nbd.service
 Source2: SOURCES/xapi-nbd/xapi-nbd.path
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.9.0&format=tar.gz&prefix=xapi-nbd-1.9.0#/xapi-nbd-1.9.0.tar.gz) = 0c6dc8f1193d8b611bc6cc042d6232c3310e648d
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.10.0&format=tar.gz&prefix=xapi-nbd-1.10.0#/xapi-nbd-1.10.0.tar.gz) = a9449927eed73fdaeb901e8c93b1e651db1ec5ef
 
 BuildRequires:  xs-opam-repo
 BuildRequires:  ocaml-xcp-idl-devel
@@ -27,6 +27,9 @@ NBD server that exposes XenServer disks
 
 %build
 make release
+
+%check
+make test
 
 %install
 %{__install} -D -m 0755 _build/default/src/main.exe %{buildroot}/%{_sbindir}/xapi-nbd
@@ -52,6 +55,12 @@ make release
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 1.10.0-3
+- bump packages after xs-opam update
+
+* Tue May 14 2019 Christian Lindig <christian.lindig@citrix.com> - 1.10.0-1
+- XSI-338 improve signal handling and program exit
+
 * Tue Jan 15 2019 Christian Lindig <christian.lindig@citrix.com> - 1.9.0-1
 - CA-307773: initialize EC curve to the one XAPI would use
 
