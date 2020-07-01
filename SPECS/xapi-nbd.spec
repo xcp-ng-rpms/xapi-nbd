@@ -1,16 +1,16 @@
 Name:           xapi-nbd
-Version:        1.10.0
-Release:        3%{?dist}
+Version:        1.11.0
+Release:        1%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.10.0&format=tar.gz&prefix=xapi-nbd-1.10.0#/xapi-nbd-1.10.0.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz
 Source1: SOURCES/xapi-nbd/xapi-nbd.service
 Source2: SOURCES/xapi-nbd/xapi-nbd.path
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.10.0&format=tar.gz&prefix=xapi-nbd-1.10.0#/xapi-nbd-1.10.0.tar.gz) = a9449927eed73fdaeb901e8c93b1e651db1ec5ef
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz) = 40168edbe1857e993f417af5af554764e751a9e0
 
 BuildRequires:  xs-opam-repo
 BuildRequires:  ocaml-xcp-idl-devel
@@ -55,6 +55,9 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Fri Apr 03 2020 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-1
+- CP-33058 centralize cipherstrings
+
 * Fri Aug 23 2019 Edwin Török <edvin.torok@citrix.com> - 1.10.0-3
 - bump packages after xs-opam update
 
