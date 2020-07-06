@@ -12,6 +12,10 @@ Source2: SOURCES/xapi-nbd/xapi-nbd.path
 
 Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz) = 40168edbe1857e993f417af5af554764e751a9e0
 
+# XCP-ng patches
+# Patch not necessary anymore in xapi-nbd 1.12.0 and above
+Patch1000: xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch
+
 BuildRequires:  xs-opam-repo
 BuildRequires:  ocaml-xcp-idl-devel
 BuildRequires:  ocaml-xen-api-client-devel
@@ -57,6 +61,7 @@ make test
 %changelog
 * Wed Jul 01 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-1.1
 - Rebase on CH 8.2
+- add xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch to adapt to new API
 
 * Fri Apr 03 2020 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-1
 - CP-33058 centralize cipherstrings

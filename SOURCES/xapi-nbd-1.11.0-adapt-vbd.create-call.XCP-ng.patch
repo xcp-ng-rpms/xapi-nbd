@@ -1,0 +1,16 @@
+Adapt `VBD.create` call to new API.
+See: https://github.com/xapi-project/xen-api/commit/07b0fd4d509825277d44258da29de37d1d758aff
+
+diff --git a/src/cleanup.ml b/src/cleanup.ml
+index 2ec0e74..e5d0d61 100644
+--- a/src/cleanup.ml
++++ b/src/cleanup.ml
+@@ -105,7 +105,7 @@ module VBD = struct
+   end
+
+   let with_vbd ~vDI ~vM ~mode ~rpc ~session_id f =
+-    Xen_api.VBD.create ~rpc ~session_id ~vM ~vDI ~userdevice:"autodetect" ~bootable:false ~mode ~_type:`Disk ~unpluggable:true ~empty:false ~other_config:[] ~qos_algorithm_type:"" ~qos_algorithm_params:[]
++    Xen_api.VBD.create ~rpc ~session_id ~vM ~vDI ~userdevice:"autodetect" ~bootable:false ~mode ~_type:`Disk ~unpluggable:true ~empty:false ~other_config:[] ~qos_algorithm_type:"" ~qos_algorithm_params:[] ~device:"" ~currently_attached:false
+     >>= fun vbd ->
+     Persistent.with_tracking rpc session_id vbd (fun () ->
+         Runtime.with_tracking vbd (fun () ->
