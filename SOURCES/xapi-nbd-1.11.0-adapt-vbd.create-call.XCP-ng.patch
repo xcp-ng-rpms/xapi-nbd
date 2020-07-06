@@ -1,12 +1,6 @@
 Adapt `VBD.create` call to new API.
 See: https://github.com/xapi-project/xen-api/commit/07b0fd4d509825277d44258da29de37d1d758aff
 
-commit a21abbd
-Author: BenjiReis <benjamin.reis@vates.fr>
-Date:   Mon Jul 6 10:12:18 2020 +0200
-
-    toto
-
 diff --git a/src/cleanup.ml b/src/cleanup.ml
 index 2ec0e74..e5d0d61 100644
 --- a/src/cleanup.ml

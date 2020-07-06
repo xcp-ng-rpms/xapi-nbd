@@ -60,7 +60,7 @@ make test
 %changelog
 * Wed Jul 01 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-1.1
 - Rebase on CH 8.2
-- add xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch to respect new API
+- add xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch to adapt to new API
 
 * Fri Apr 03 2020 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-1
 - CP-33058 centralize cipherstrings
