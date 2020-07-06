@@ -13,6 +13,7 @@ Source2: SOURCES/xapi-nbd/xapi-nbd.path
 Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz) = 40168edbe1857e993f417af5af554764e751a9e0
 
 # XCP-ng patches
+# Patch not necessary anymore in xapi-nbd 1.12.0 and above
 Patch1000: xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch
 
 BuildRequires:  xs-opam-repo
