@@ -1,6 +1,6 @@
 Name:           xapi-nbd
 Version:        1.11.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
@@ -55,6 +55,12 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.11.0-3
+- Bump package after xs-opam update
+
+* Tue Jul 13 2021 Edwin Török <edvin.torok@citrix.com> - 1.11.0-2
+- bump packages after xs-opam update
+
 * Fri Apr 03 2020 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-1
 - CP-33058 centralize cipherstrings
 
