@@ -1,6 +1,6 @@
 Name:           xapi-nbd
 Version:        1.11.0
-Release:        1.1%{?dist}
+Release:        3.1%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/xapi-project/xapi-nbd
@@ -59,6 +59,14 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Mon Dec 20 2021 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-3.1
+- Sync with CH 8.2.1
+- *** Upstream changelog ***
+- * Mon Sep 27 2021 Pau Ruiz Safont <pau.safont@citrix.com> - 1.11.0-3
+- - Bump package after xs-opam update
+- * Tue Jul 13 2021 Edwin Török <edvin.torok@citrix.com> - 1.11.0-2
+- - bump packages after xs-opam update
+
 * Wed Jul 01 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-1.1
 - Rebase on CH 8.2
 - add xapi-nbd-1.11.0-adapt-vbd.create-call.XCP-ng.patch to adapt to new API
