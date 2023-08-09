@@ -1,16 +1,14 @@
+%global package_speccommit a6060adb227166c7ef04b12f4c6d8299c321d46d
+%global package_srccommit v1.11.0
 Name:           xapi-nbd
-Version:        1.11.0
-Release:        3.2%{?dist}
+Version: 1.11.0
+Release: 9.1%{?xsrel}%{?dist}
 Summary:        NBD server that exposes XenServer disks
-License:        LGPL2.1 + OCaml linking exception
+License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/xapi-nbd
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz
-Source1: SOURCES/xapi-nbd/xapi-nbd.service
-Source2: SOURCES/xapi-nbd/xapi-nbd.path
-
-
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XSU/repos/xapi-nbd/archive?at=v1.11.0&format=tar.gz&prefix=xapi-nbd-1.11.0#/xapi-nbd-1.11.0.tar.gz) = 40168edbe1857e993f417af5af554764e751a9e0
+Source0: xapi-nbd-1.11.0.tar.gz
+Source1: xapi-nbd.service
+Source2: xapi-nbd.path
 
 # XCP-ng patches
 # Patch not necessary anymore in xapi-nbd 1.12.0 and above
@@ -59,6 +57,22 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Wed Aug 09 2023 Gael Duperrey <gduperrey@vates.fr> - 1.11.0-9.1
+- Sync with hotfix XS82ECU1040
+- *** Upstream changelog ***
+- * Thu Jul 20 2023 Rob Hoes <rob.hoes@citrix.com> - 1.11.0-9
+- - Bump release and rebuild
+- * Mon Jun 19 2023 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-8
+- - Bump release and rebuild
+- * Thu Jun 08 2023 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-7
+- - Bump release and rebuild
+- * Fri May 12 2023 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-6
+- - Bump release and rebuild
+- * Fri May 12 2023 Christian Lindig <christian.lindig@citrix.com> - 1.11.0-5
+- - Bump release and rebuild
+- * Tue Feb 28 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.11.0-4
+- - Change license to be a valid SPDX identifier
+
 * Wed Aug 17 2022 Gael Duperrey <gduperrey@vates.fr> - 1.11.0-3.2
 - Rebuild for updated xapi from XS82ECU1011
 
