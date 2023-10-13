@@ -1,8 +1,8 @@
-%global package_speccommit a6060adb227166c7ef04b12f4c6d8299c321d46d
+%global package_speccommit da85a6819e9f73ff80411b38afe8dc299bd047ef
 %global package_srccommit v1.11.0
 Name:           xapi-nbd
 Version: 1.11.0
-Release: 9.1%{?xsrel}%{?dist}
+Release: 10.1%{?xsrel}%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/xapi-nbd
@@ -57,6 +57,13 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Fri Oct 13 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-10.1
+- Rebuild after sync with hotfix XS82ECU1049
+- No source changes: only rebuild for dependencies
+- *** Upstream changelog ***
+- * Mon Oct 02 2023 Pau Ruiz Safont <pau.ruizsafont@cloud.com> - 1.11.0-10
+- - Bump release and rebuild
+
 * Wed Aug 09 2023 Gael Duperrey <gduperrey@vates.fr> - 1.11.0-9.1
 - Sync with hotfix XS82ECU1040
 - *** Upstream changelog ***
