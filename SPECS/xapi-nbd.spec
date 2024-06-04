@@ -1,8 +1,8 @@
-%global package_speccommit da85a6819e9f73ff80411b38afe8dc299bd047ef
+%global package_speccommit be8e2e22d64b3f99d9888909d724381d7d218c49
 %global package_srccommit v1.11.0
 Name:           xapi-nbd
 Version: 1.11.0
-Release: 10.1%{?xsrel}%{?dist}
+Release: 17.1%{?xsrel}%{?dist}
 Summary:        NBD server that exposes XenServer disks
 License:        LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception
 URL:            https://github.com/xapi-project/xapi-nbd
@@ -57,6 +57,25 @@ make test
 %systemd_postun xapi-nbd.path
 
 %changelog
+* Tue Jun 04 2024 Gael Duperrey <gduperrey@vates.tech> - 1.11.0-17.1
+- Rebuild after sync with hotfix XS82ECU1064
+- No source changes: only rebuild for dependencies
+- *** Upstream changelog ***
+- * Fri Mar 08 2024 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-17
+- - Bump release and rebuild
+- * Wed Mar 06 2024 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-16
+- - Bump release and rebuild
+- * Tue Mar 05 2024 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-15
+- - Bump release and rebuild
+- * Fri Nov 03 2023 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-14
+- - Bump release and rebuild
+- * Tue Oct 24 2023 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-13
+- - Bump release and rebuild
+- * Tue Oct 24 2023 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-12
+- - Bump release and rebuild
+- * Wed Oct 18 2023 Christian Lindig <christian.lindig@cloud.com> - 1.11.0-11
+- - Bump release and rebuild
+
 * Fri Oct 13 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 1.11.0-10.1
 - Rebuild after sync with hotfix XS82ECU1049
 - No source changes: only rebuild for dependencies
